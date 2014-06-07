@@ -3,7 +3,7 @@ Xshare
 
 an online document sharing plateform
 
-## team menbers
+## team members
 * 11331067 方威
 * 11331144 霍然 
 * 11331047 程聪
