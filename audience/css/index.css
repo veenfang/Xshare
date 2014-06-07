@@ -1,0 +1,30 @@
+/* 
+    Document   : index
+    Created on : 2013-8-17, 19:42:27
+    Author     : Kevin
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+* { margin: 0; padding: 0; }   
+
+html, body, #content { height: 100%; width: 100%; }   
+
+#canvas { 
+  display: block; 
+  border: red 1px solid;
+  margin: 0;
+  padding: 0;
+} 
+
+#frame {
+  border: green 2px solid;
+  margin: 0;
+  padding: 0;
+}
+
+
+

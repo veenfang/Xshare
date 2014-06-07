@@ -1,0 +1,162 @@
+<?php
+include_once("../model/mDatabase.php");
+
+//$ip = $_SERVER["REMOTE_ADDR"];
+$ip = '222.200.185.66';
+$lectureInfo = array('ip' => $ip);
+
+$roomname = $_REQUEST['roomname'];
+$db = new mDatabase();
+$roomInfo = $db->queryRoom($roomname);
+
+$lectureInfo['roomname'] = $roomInfo['roomname'];
+$lectureInfo['filename'] = $roomInfo['file'];
+$lectureInfo['currentpage'] = $roomInfo['currentpage'];
+$lectureInfo['pageNum'] = $roomInfo['pagenum'];
+$lectureInfo['lecturer'] = $roomInfo['roomname'];
+$lectureInfoStr = json_encode($lectureInfo);
+
+?>
+print <<<EOT
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <link rel="stylesheet" href="toshow.css" >
+            <script src="ts.js"></script>
+            <script src="fs.js"></script>
+            <title>$lectureInfo['filename']</title>
+            <script>
+                var lectureInfo = <?= $lectureInfoStr ?>;
+                var websocket;
+                var currentDisplayNum;
+                var canvasPaintColor = "rgb(0,0,0)";
+
+
+
+                var initWebsocket = function() {
+                    websocket = new WebSocket("ws://" + lectureInfo['ip'] + ":8888");
+                    websocket.onopen = function(e) {
+                        websocket.send("guest;" + lectureInfo['roomname']);
+                    }
+                    websocket.onclose = function(e) {
+                        alert("web socket close");
+                    }
+                    websocket.onmessage = function(e) {
+                        var data = e.data.split(",");   //here, we can also get the termination information
+                        switch (data[0]) {
+                            case "1":
+                            case "2":
+                            case "3":
+                                draw(data);
+                                break;
+                            case "33":
+                                turnToPage(data[1]);
+                                break;
+                            case "50":
+                                canvasPaintColor = data[1];
+                                break;
+                            case "80":
+                                break;
+                            case "99":
+                                websocket.close();
+                                break;
+                        }
+
+                    }
+                    websocket.onerror = function(e) {
+                        alert("websocket error");
+                    }
+                }
+
+                var draw = function(data) {
+                    var ctx = document.getElementById("canvas" + currentDisplayNum).getContext("2d");
+                    ctx.strokeStyle = canvasPaintColor;
+                    switch (data[0]) {
+                        case "1":
+                            ctx.beginPath();
+                            ctx.moveTo(width * parseFloat(data[1]), height * parseFloat(data[2]));
+                            break;
+                        case "2":
+                            ctx.lineTo(width * parseFloat(data[1]), height * parseFloat(data[2]));
+                            ctx.stroke();
+                            break;
+                    }
+                }
+
+                var render = function(pageNum, isok) {
+                    var frame = document.getElementById('iframe' + pageNum);
+                    var url = generateUrl(pageNum);
+                    frame.setAttribute('src', url);
+                    control.rescale(frame);
+                }
+
+                var generateUrl = function(pageNum) {
+                    var url = 'http://' + lectureInfo['ip'] + '/islider-mobile/documents/'
+                            + lectureInfo['roomname'] + '/' + lectureInfo['filename'] + '/'
+                            + lectureInfo['filename'] + pageNum + '.html';
+                    return url;
+                }
+
+                var turnToPage = function(pageNum) {
+                    touchslide.slideTo(pageNum - 1);
+                }
+
+
+                var preRender = function(pageNum, num) {
+                    for (var i = pageNum - num; i <= pageNum + num; i++) {
+                        if (i > 0 && i <= lectureInfo['pageNum'] && frameRecord[i] == false) {
+                            render(i, false);
+                        }
+                    }
+                }
+
+                
+            var touchslide = TouchSlide({
+                slideCell: "#content",
+                titCell: ".hd ul",
+                mainCell: "#framelist",
+                effect: "left",
+                autoPlay: false, //自动播放
+                autoPage: true,
+                delayTime: 2000,
+                interTime: 4000
+            });
+                initWebsocket();
+                currentDisplayNum = 0;
+                render(lectureInfo['currentpage'], true);
+                turnToPage(lectureInfo['currentpage']);
+
+            </script>
+
+        </head>
+        <body>
+            <div id="content">
+            <div class="bd">
+                <ul id="framelist">
+EOT;
+
+<?php
+    for($i=0; $i < $lectureInfo['pageNum']; $i++ ){
+?>
+print <<<EOT
+                    <li><iframe id="iframe{$i+1}" src="test.html"></iframe>
+                        <canvas id="canvas{$i+1}">canvas {$i+1}</canvas>
+                    </li>
+EOT;
+<?php
+    }
+?>
+print <<<EOT
+                </ul>
+            </div>
+            <div class="hd">
+                <ul>
+
+                </ul>
+            </div>
+
+        </div>
+        </body>
+    </html>
+EOT;

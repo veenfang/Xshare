@@ -1,0 +1,75 @@
+Latest v0.8
+
+v0.7
+2013.03.01
+
+* Process outline
+* Fix build with poppler
+* Many code cleaning jobs [John Hewson]
+* Experimental printing support
+* Lots of code refinements
+
+v0.6
+2013.01.26
+
+* new option --no-drm [John Hewson]
+* Travis CI integration [John Hewson]
+* Add a class for 'left'
+* Fixed a bug of hashing/finding GfxRGB
+* new option -v, --version [John Hewson]
+* Render Type 3 fonts as image
+* New parameter: --use-cropbox
+* Progress indicator
+* Create a glyph for ' ' when missing
+* Code refining
+
+v0.5
+2012.10.06
+
+* New option: --remove-unused-glyph
+* New options: --stretch-narrow-glyph, --squeeze-wide-glyph
+* Fixed glyph width adjusting 
+* Fixed a memory issue
+* Working on css-draw
+* Working on integrating background-renderer, preparing for svg renderer in
+the future
+
+v0.4
+2012.09.26
+
+* Precise link destination within the document
+* Better appearance
+* UI events/actions with Javascript
+* external hint tool
+* (should) do not freeze Firefox
+* --auto-hint, good for Chrome
+* many fixes for IE
+* adjust widths of fonts according to PDF
+
+v0.3
+2012.09.16
+
+* Links
+* New options: --data-dir --split-pages
+* Manifest for customized HTML generation
+* Smooth scrolling
+* Completely removed dependency of boost
+* Removed dependency of boost::filesystem
+* Relaxed dependency on c++11. Now can be built with GCC 4.4.6
+* Removed dependency of boost::format and boost::algorithm
+* New option --space-as-offset
+* A font preprocessor, for solving encoding problems
+* Better HTML optimization, states are reused
+* HTML should work when Javascript is disabled
+
+v0.2
+2012.09.06
+
+* Fontforge is now linked with, not called with scripts
+* Better accuracy of rendering, with a new line model
+* New option --decompose-ligature
+
+v0.1 
+2012.08.28
+
+* The first release 

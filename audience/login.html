@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+        <meta charset="utf-8">
+        <title>login</title>
+        <!--适应手机-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--适应手机结束-->
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="stylesheet" href="css/login_css.css" >
+
+    </head>
+
+
+    <body>
+
+        <div class="container">
+            <div class="form-signin">
+                <div><!--room登陆-->
+					<h3 class="form-signin-heading">Input the room name</h3>
+					<form action="../control/requestHandler.php?controlType=listen" method="post">
+						<input type="text" class="input-block-level" placeholder="room name" id="id" name="roomname"/>
+						<input type="submit"/>
+					</form>	
+
+                    
+                </div><!--/room登陆-->
+
+
+        </div> <!-- /container -->
+
+    </body>
+</html>

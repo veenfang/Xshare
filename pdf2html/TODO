@@ -1,0 +1,26 @@
+cheat.html on IE
+
+== Future: ==
+
+Too difficult/complicated to implement:
+ - integrate splash/cairo
+ - naive support for image/drawing (SVG?)
+ - type 3 fonts (convert to SVG fonts?)
+ - reflowable text/combine lines/unwrapping
+
+Not enough motivated/Lazy
+ - argument auto-completion
+ - use absolute positioning for long whitespace
+ - detect duplicate base fonts when embedding
+ - disable selection if we know unicode is wrong
+ - check if we can add information to the font, and let browsers show ligatures automatically
+ - position history stack (popstate)
+ - draw non-orthogonal lines with CSS
+ - rename single-html -> embed-font/image/css ...
+ - merge sub/sup into one line
+ - precise link dest: zoom
+ - multiple charcode mapped to a same glyph
+ - don't dump image when it is empty
+ - minimum line width of css drawing
+ - ajax in pdf2htmlEX for separated pages
+ - separate classes for annotations (such that we don't have to hide all css drawings for printing)

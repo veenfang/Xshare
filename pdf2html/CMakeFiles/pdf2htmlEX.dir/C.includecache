@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/kevin/Desktop/pdf2htmlEX-master/src/util/ffw.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+stdarg.h
+-
+assert.h
+-
+math.h
+-
+fontforge.h
+-
+baseviews.h
+-
+ffw.h
+/home/kevin/Desktop/pdf2htmlEX-master/src/util/ffw.h
+
+/home/kevin/Desktop/pdf2htmlEX-master/src/util/ffw.h
+cstdint
+-
+stdint.h
+-
+

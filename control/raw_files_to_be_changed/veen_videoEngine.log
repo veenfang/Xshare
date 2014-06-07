@@ -1,0 +1,67 @@
+2013/07/27 19:45:50 [SessionManagerImpl::Initialize] config:m_bIsWriteLocalLog: 0
+m_bIsUploadLogToSvr: 0
+m_logUploadStartTime: 
+m_logUploadEndTime: 
+m_bIsRelaySvrUdpCheck: 0
+UdpCheckIpCount: 0
+Stun IPCount: 1
+m_nForBidConnType: 0
+m_VideoIsServerConfig: 0
+cpuChip: 0
+m_maxEncFps: 0
+m_maxDecFps: 0
+m_dispWidth: 0
+m_dispHeight: 0
+m_VideoParam2: 0
+m_AudioIsServerConfig: 0
+m_workModel: 0
+m_preProcModel: 0
+m_OutputGain: 0
+m_AudioParam1: 0
+m_CameraAngleIsServerConfig: 0
+m_Front_Local: 0
+m_Back_Local: 0
+m_Front_Remote_0: 0
+m_Back_Remote_0: 0
+m_Front_Remote_90: 0
+m_Back_Remote_90: 0
+m_Front_Remote_180: 0
+m_Back_Remote_180: 0
+m_Front_Remote_270: 0
+m_Back_Remote_270: 0
+m_ConnPriorityIsConfig: 0
+m_LocalDirConnPri: 0
+m_RelayConnPri: 0
+m_StunDirConnPri: 0
+m_ConnParam1: 0
+
+2013/07/27 19:45:50 [INetworkImpl::SetConfig],pingrelayaddr_(0)
+2013/07/27 19:45:50 [SessionManagerImpl::Initialize] Initialize, llSelfUIN:254245851, AVEngine version:V2.9.0304.001
+2013/07/27 19:45:50 [ConfigSys::Unpack] type(1), len(2)
+2013/07/27 19:45:50 [ConfigSys::Unpack] type(4), len(8)
+2013/07/27 19:45:50 [SessionManagerImpl::CallMethod] Enter llFriendUIN:860797144, methodType:2, nParam1:0, nParam2:0
+2013/07/27 19:45:50 [SessionManagerImpl::OnRecvSessionData] Receive Net Bytes(len 110): isM2M:1
+2013/07/27 19:45:50 [SessionManagerImpl::HandleRequest] ---------------- recv request -----------------
+2013/07/27 19:45:50 [SessionManagerImpl::HandleRequest] dwSessionID = 49984082,llFriendUIN = 860797144, version:V2.9.0304.001, reserve:0
+2013/07/27 19:45:50 [SessionManagerImpl::SetupSession] Enter SetupSession , isOrigSession:1
+2013/07/27 19:45:50 [OrigSessionImpl::Initilize] m_State = 0,SessionID = 49984082, llSelfUIN = 254245851, llFriendUIN = 860797144, clientType = 1
+2013/07/27 19:45:50 [OrigSessionImpl::SelfCapaInit] self capa init done, maxEnc:10, maxDec:10
+2013/07/27 19:45:50  ---------------------- Recieve request ----------------------
+2013/07/27 19:45:50 [OrigSessionImpl::HandleRequest] pkgSessionID(49984082) SessionID(49984082), pkgSelfUIN(254245851) SelfUIN(254245851), pkgFriendUIN(860797144) FriendUIN(860797144), m_State = 1, isM2M:1, FriendclientType:1
+2013/07/27 19:45:50 [OrigSessionImpl::HandleRequest] Notify network prepare local address
+2013/07/27 19:45:50 [VoipWrapperImpl::OnVideoEvent] EV_VOIP_VIDEO_REQUEST,uin:860797144
+2013/07/27 19:45:50 [SessionManagerImpl::OnRecvSessionData] Receive Net Bytes(len 33): isM2M:1
+2013/07/27 19:45:50 [SessionManagerImpl::HandleCancel] llSessionID = 49984082,llFriendUIN = 860797144
+2013/07/27 19:45:50 [OrigSessionImpl::HandleCancel] pkgSessionID(49984082) SessionID(49984082), pkgSelfUIN(254245851) SelfUIN(254245851), pkgFriendUIN(860797144) FriendUIN(860797144), m_State = 2
+2013/07/27 19:45:50 [OrigSessionImpl::HandleCancel] REASON_ORIG_CANCEL
+2013/07/27 19:45:50 [OrigSessionImpl::ResetAndPostMsg] Reset Session, SessionID = 49984082, reason:1
+2013/07/27 19:45:50 [OrigSessionImpl::GetAndReportLog] reason:1, mState:2
+2013/07/27 19:45:50 [NetworkM2PImpl::Close], sessionid(49984082)
+2013/07/27 19:45:50 [ChannelManager::DestroyChannnel], Destroy channel, channelcreated_(0),id(49984082),get_sessionID(13762846)
+2013/07/27 19:45:50 [OrigSessionImpl::ResetAndPostMsg] Close NetWork Done, ret:0
+2013/07/27 19:45:50 [SessionManagerImpl::OnMessage] EV_VOIP_CLOSED, 1
+2013/07/27 19:45:50 [SessionManagerImpl::DeleteSession] Delete Session SessionID = 49984082
+2013/07/27 19:45:50 [OrigSessionImpl::UnInitilize] Enter
+2013/07/27 19:45:50 [OrigSessionImpl::~OrigSessionImpl] 
+2013/07/27 19:45:50 [VoipWrapperImpl::OnVideoEvent] EV_VOIP_CLOSED or havereject or have accept,uin:860797144
+2013/07/27 19:45:50 [SessionManagerImpl::DealAllInstanceFree] free some memory

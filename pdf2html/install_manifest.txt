@@ -1,0 +1,5 @@
+/usr/local/share/pdf2htmlEX/base.css
+/usr/local/share/pdf2htmlEX/jquery.js
+/usr/local/share/pdf2htmlEX/pdf2htmlEX.js
+/usr/local/share/pdf2htmlEX/manifest
+/usr/local/share/man/man1/pdf2htmlEX.1
