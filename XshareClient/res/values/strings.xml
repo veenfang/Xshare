@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Activity Titles -->
+    <string name="app_name">XShare</string>
+    <string name="action_settings">设置</string>
+    <string name="title_activity_file_list">文件列表</string>
+    <string name="title_activity_file_select">选择上传文件</string>
+
+    <!-- Notice -->
+    <string name="file_progress_signing_in">正在登陆&#8230;</string>
+
+    <!-- UI elements -->
+    <string name="btn_text_upload">上传</string>
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="hello_world">Hello world!</string>
+
+</resources>
